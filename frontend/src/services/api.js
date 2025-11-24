@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -98,10 +98,10 @@ export async function deleteLink(code) {
  * Uses backend URL since redirect happens on backend
  */
 export function getShortUrl(code) {
-  // Use backend URL for redirects, fallback to current origin if not set
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+  // Use backend URL for redirects
+  const backendUrl = import.meta.env.VITE_API_URL;
   // Remove /api if present in API URL
-  const baseUrl = backendUrl.replace('/api', '');
+  const baseUrl = backendUrl.replace(/\/api$/, '');
   return `${baseUrl}/${code}`;
 }
 
