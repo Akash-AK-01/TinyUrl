@@ -13,7 +13,13 @@ const PORT = process.env.PORT || 3000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  'https://tinyurl-h5m7be3kj-akash-ak-01s-projects.vercel.app',
+];
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
