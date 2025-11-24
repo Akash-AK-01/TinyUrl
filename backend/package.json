@@ -1,0 +1,34 @@
+{
+  "name": "tinylink-backend",
+  "version": "1.0.0",
+  "description": "TinyLink URL Shortener Backend API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "check-db": "node scripts/check-db-connection.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": [
+    "url-shortener",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.1",
+    "nodemon": "^2.0.22"
+  }
+}
